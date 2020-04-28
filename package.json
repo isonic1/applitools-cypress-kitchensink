@@ -8,7 +8,7 @@
     "cypress"
   ],
   "scripts": {
-    "start:ci": "serve --no-clipboard --listen ${PORT:-8080}",
+    "start:ci": "serve --no-clipboard --listen ${PORT:-8080}"
  },
   "repository": {
     "type": "git",
