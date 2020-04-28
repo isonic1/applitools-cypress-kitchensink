@@ -1,0 +1,10 @@
+{
+  "projectId": "4b7344",
+  "defaultCommandTimeout": 60000,
+  "pageLoadTimeout": 90000,
+  "fixturesFolder": false,
+  "integrationFolder": "cypress/integration",
+  "supportFile": "cypress/support/index.js",
+  "pluginsFile": "cypress/plugins/index.js",
+  "video": false
+}
