@@ -24,6 +24,7 @@ cache:
 defaults: &defaults
   script:
     #   ## print all Travis environment variables for debugging
+    - eslint --init
     - $(npm bin)/print-env TRAVIS
     - export APPLITOOLS_BATCH_ID=`echo ${TRAVIS_PULL_REQUEST_SHA:=$TRAVIS_COMMIT}`
     - echo $APPLITOOLS_BATCH_ID
