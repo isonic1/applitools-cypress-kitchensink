@@ -11,9 +11,10 @@ addons:
     packages:
     - libgconf-2-4
 script:
-    - $(npm bin)/print-env TRAVIS
     - export APPLITOOLS_BATCH_ID=`echo ${TRAVIS_PULL_REQUEST_SHA:=$TRAVIS_COMMIT}`
     - echo $APPLITOOLS_BATCH_ID
     - npm install
     - npx eyes-setup
+    - $(npm bin)/print-env TRAVIS
+    - npm run start:ci &
     - npx cypress run --spec "cypress/integration/specs/actions.spec.js"
