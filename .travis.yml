@@ -30,7 +30,7 @@ defaults: &defaults
     - npm install
     - npx eyes-setup
     - npm run start:ci &
-    - npx cypress run --spec "cypress/integration/examples/example.spec.js"
+    - npx cypress run --spec "cypress/integration/specs/actions.spec.js"
     # after all tests finish running we need
     # to kill all background jobs (like "npm start &")
     - kill $(jobs -p) || true
