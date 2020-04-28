@@ -10,27 +10,10 @@ addons:
   apt:
     packages:
     - libgconf-2-4
-
-cache:
-  # cache both npm modules and Cypress binary
-  directories:
-    - ~/.npm
-    - ~/.cache
-  override:
-    - npm ci
-    - npm run cy:verify
-    - npm run cy:info
-
-defaults: &defaults
-  script:
-    #   ## print all Travis environment variables for debugging
+script:
     - $(npm bin)/print-env TRAVIS
     - export APPLITOOLS_BATCH_ID=`echo ${TRAVIS_PULL_REQUEST_SHA:=$TRAVIS_COMMIT}`
     - echo $APPLITOOLS_BATCH_ID
     - npm install
     - npx eyes-setup
-    - npm run start:ci &
     - npx cypress run --spec "cypress/integration/specs/actions.spec.js"
-    # after all tests finish running we need
-    # to kill all background jobs (like "npm start &")
-    - kill $(jobs -p) || true
