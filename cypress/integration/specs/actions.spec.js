@@ -34,7 +34,7 @@ context('Actions', () => {
       .should('have.value', 'slow.typing@email.com')
     
     cy.eyesCheckWindow({
-      tag: 'low.typing@email.com',
+      tag: 'low.typing@email.comm',
       target: 'window',
       fully: false,
       ignore: [{selector: 'body > div.banner > div'}]
